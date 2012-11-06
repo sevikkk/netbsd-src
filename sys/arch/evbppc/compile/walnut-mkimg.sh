@@ -36,7 +36,7 @@ case $file in
 	;;
 esac
 
-size=`stat -f '%z' ${input}.bin.$$`
+size=`stat -c '%s' ${input}.bin.$$`
 size=$(( ( $size + 511 ) / 512 ))
 
 enc()
