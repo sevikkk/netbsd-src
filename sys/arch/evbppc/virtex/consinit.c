@@ -54,7 +54,6 @@ void 			xlcom_kgdbinit(void);
 #endif
 #endif
 
-struct consdev 		*cn_tab = NULL;
 bus_space_tag_t 	consdev_iot;
 bus_space_handle_t 	consdev_ioh;
 

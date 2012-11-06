@@ -101,7 +101,6 @@ char machine[] = MACHINE;		/* from <machine/param.h> */
 char machine_arch[] = MACHINE_ARCH;	/* from <machine/param.h> */
 
 char bootpath[256];
-vaddr_t msgbuf_vaddr;
 
 void initppc(vaddr_t, vaddr_t);
 
