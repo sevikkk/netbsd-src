@@ -1,0 +1,19 @@
+#	$NetBSD: files.walnut,v 1.17 2011/06/20 17:44:33 matt Exp $
+#
+# walnut-specific configuration info
+
+defparam        opt_esi.h                    PHYSMEM
+defparam        opt_esi.h                    CPUFREQ
+
+file	arch/evbppc/esi/autoconf.c
+file	arch/evbppc/esi/consinit.c
+file	arch/evbppc/esi/machdep.c
+file	arch/powerpc/ibm4xx/ibm4xx_machdep.c
+
+# Memory Disk for install kernel
+file	dev/md_root.c				memory_disk_hooks
+
+# Off-chip peripheral bus
+device	pbus {[addr=-1], [irq=-1]}
+attach	pbus at plb
+file	arch/evbppc/esi/dev/pbus.c		pbus
