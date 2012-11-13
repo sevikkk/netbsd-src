@@ -46,11 +46,7 @@ CONFIGURE_ENV+=	ac_cv_header_ncurses_h=no \
 # Disable sim unless it's known to work (configure's default is to
 # enable sim if supported).
 CONFIGURE_ARGS_SIM=
-.if \
-    ${MACHINE_CPU} != "powerpc" && \
-    ${MACHINE_CPU} != "powerpc64"
 CONFIGURE_ARGS_SIM+= --disable-sim
-.endif
 
 native-gdb: .native/.configure_done
 	@echo 'Extracting GDB configury for a native toolchain.'
