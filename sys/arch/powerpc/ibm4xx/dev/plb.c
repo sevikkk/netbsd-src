@@ -181,8 +181,10 @@ plb_attach(device_t parent, device_t self, void *aux)
 	}
 
 	while (local_plb_devs && local_plb_devs->plb_name != NULL) {
-		if (local_plb_devs->plb_pvr != pvr)
+		if (local_plb_devs->plb_pvr != pvr) {
+			local_plb_devs++;
 			continue;
+		};
 
 		paa.plb_name = local_plb_devs->plb_name;
 		paa.plb_dmat = &ibm4xx_default_bus_dma_tag;
